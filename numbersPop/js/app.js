@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-  
+ 
 
   $(document).ready(function(){
     //$("#e").text("L");
@@ -43,11 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
     
     //setting starting index
     currentIndex = 3;
-    
+  
 
     //document.head.style.backgroundColor = setRandomColor();
   });
-
+});
 window.addEventListener("load", function() {
   started = false;
   rightAfterStart = false;
@@ -862,8 +862,4 @@ function treeControl(a, b, c, startVal) {
   
   return resultSave;
 }
-
-/**
- *  SOFTKEY
- */
 
