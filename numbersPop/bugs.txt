@@ -1,1 +1,7 @@
 levelControl() interaction
+
+
+known bugs:
+level completat + settings + inapoi ==> nu progreseaza dar reseteaza nivelul iar daca reprti nu incrementeaza scorul
+
+culorile se schimba daca selectezi butoanele prea repede
