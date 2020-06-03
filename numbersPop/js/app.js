@@ -184,7 +184,6 @@ function randomIntFromRange(min, max) {
 
 // need to insert an array of colors
 function randomColor(colors) {
-
   return colors[Math.floor(Math.random() * colors.length)];
 }
 
@@ -248,6 +247,11 @@ setInterval(function(){ $("#eyes").animate({
   //width: '2.0rem',
   opacity: '0.1'
 },'fast'); }, 4000);
+
+
+
+
+
 function nav (move) {
   
 
@@ -275,13 +279,14 @@ function nav (move) {
     if((window.innerWidth < window.innerHeight &&
        selectedElementID !== 'g' && selectedElementID !=='c') || 
        window.innerWidth >= window.innerHeight && selectedElementID !=='d'){
-    $("#"+selectedElementID).animate({
-      //width: '2.0rem',
-      
-	    height: '2.2rem'
-    },'fast');
     }
-     
+
+    //click animation
+    document.getElementById(selectedElementID).style.boxShadow = "0px 0px whitesmoke";
+    setInterval(() => {
+      document.getElementById(selectedElementID).style.boxShadow = "0px 0px 10px 10px black";
+    }, 200);
+
     $("#eyes").animate({
       //width: '2.0rem',
       opacity: '1.0'
@@ -297,8 +302,8 @@ function nav (move) {
   if(move == 0 && started == true){
 
     if(soundOnNow == true){
-    //mainAudio = document.getElementById('soundClick');
-    //mainAudio.play();
+    mainAudio = document.getElementById('soundClick');
+    mainAudio.play();
     }
 
     if(selectedElementID == "j" && move == 0){
@@ -344,7 +349,7 @@ function nav (move) {
         }else if(selectedElementID == 'c'){
           soundOnOff();
           if(soundOnNow){
-          document.getElementById('cImg').src = "_assets/soundOn.png";
+            document.getElementById('cImg').src = "_assets/soundOn.png";
           }else{
             document.getElementById('cImg').src = "_assets/soundOff.png";
           }
@@ -397,7 +402,10 @@ function nav (move) {
             //width: '2.0rem',
            opacity: '0.0'
           },'fast');
-          $("#calculator").effect('shake');
+          
+         
+          //$("#calculator").effect("shake");
+          
           
          if(soundOnNow){
           document.getElementById('loseSound').play();
@@ -420,7 +428,7 @@ function nav (move) {
 
         
       } else if($("#"+selectedElementID).text() == "C" && wonGame == false){
-        resetOn = true;
+        resetOn = false;
         levelControl();
          
       } else if(wonGame == true){
