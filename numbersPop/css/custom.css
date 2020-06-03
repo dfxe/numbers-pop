@@ -191,7 +191,13 @@ html {
 	
 		height: 10px;
 		width: 10px;
-		background-color:red;
+		background: repeating-linear-gradient(
+					90deg,
+					rgb(255, 120, 29),
+					#d3545d 10px,
+					rgb(255, 120, 29) 10px, 
+					#d3545d 10px
+				);
 		border-radius: 50%;
 		display: inline-block;
 	  

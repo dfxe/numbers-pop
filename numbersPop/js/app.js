@@ -76,9 +76,11 @@ window.addEventListener("load", function() {
   this.document.getElementById('bImg').src = "_assets/playBtn.png";
  
   $("#objective").text(allGreetingsTxts[actualLanguageNum]);
-  //$('#moves').text(localStorage['highScoreKey'] || '100');
+  
   $('#progressionSoFar').text(levelLeftAt.toString()+'/35');
   $("#wrapper").text( " Welcome to Numbers Pop!\nNice. ");
+
+  movesLeftFeedback();
 });
 
 
@@ -156,6 +158,24 @@ function levelControl(){
   //$("#moves").text(movesLeftNumber.toString());
   $("#show-input").text(startingValue.toString());
   $("#objective").text(" ="+levelObjectiveNumber.toString()); // maybe arrow symbol: ←
+
+  movesLeftFeedback();
+}
+
+function movesLeftFeedback(){
+  $('.movesDots').each(function(i) {
+    if(i < movesLeftNumber){
+      $(this).animate({
+        //width: '2.0rem',
+        opacity: '1.0'
+      },'fast');
+    }else{
+      $(this).animate({
+        //width: '2.0rem',
+        opacity: '0.2'
+      },'fast');
+    }
+  });
 }
 
 
@@ -230,6 +250,7 @@ function handleKeydownEvent(e) {
 
 function handleNumpad(){
   //$('#moves').text('pressed numpad');
+  movesLeftFeedback();
 }
 
 let currentIndex = 1;
@@ -382,7 +403,8 @@ function nav (move) {
         
         operationControl($("#"+selectedElementID).text());
         movesLeftNumber = movesLeftNumber - 1;
-        //$("#moves").text(movesLeftNumber.toString());
+
+        movesLeftFeedback();
 
        
         // IF PLAYER WON
@@ -397,11 +419,13 @@ function nav (move) {
           
           levelLeftAt = levelLeftAt + 1;
           $("#objective").text(tickMark+allNextTxts[actualLanguageNum]+levelLeftAt);
-          //document.getElementById("#moves").focus();
+
+          movesLeftFeedback();
+
           $("#"+selectedElementID).text(tickMark);
           
           
-          //$("#moves").text(movesLeftNumber.toString());
+          movesLeftFeedback();
 
          
 
@@ -431,7 +455,7 @@ function nav (move) {
             levelLeftAt = levelLeftAt + 1;
             
             levelControl();
-            //$("#moves").text(movesLeftNumber.toString());
+            movesLeftFeedback();
           }
 
         }
