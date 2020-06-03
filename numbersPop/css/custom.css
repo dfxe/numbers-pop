@@ -116,12 +116,14 @@ html {
 }
 
 #eyes{
-	top: 0;
+	top: 11px;
+	left: 54.5px;
 	position: fixed;
-	width: 70%;
-	height: 50%;
-	padding-bottom: 30%;
+	width: 55%;
+	height: 51%;
+	padding-bottom: 55%;
 	margin: 0%;
+	
 	
 	animation-name: beginAnim; 
   animation-duration: 4s; 
