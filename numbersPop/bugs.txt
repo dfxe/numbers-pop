@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 levelControl() interaction
 
 
@@ -5,3 +6,13 @@ known bugs:
 level completat + settings + inapoi ==> nu progreseaza dar reseteaza nivelul iar daca reprti nu incrementeaza scorul
 
 culorile se schimba daca selectezi butoanele prea repede
+=======
+bug: levelControl() interaction
+bug: buttons don't click animate correctly
+bug: at color change level reset (now it is adding up)
+bug: color update (low priority) 
+bug: complete level, settings, back, level remains the same (reset) not implementing the points
+bug: buttons anims at press needs to press 
+bug: centre buttons
+bug: add "?" tutorial btn
+>>>>>>> 4a1253114d8b17e8e4255e46945b99ed66abcb29
