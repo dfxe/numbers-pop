@@ -282,10 +282,11 @@ function nav (move) {
     }
 
     //click animation
-    document.getElementById(selectedElementID).style.boxShadow = "0px 4px #ff7c87";
-   
-    setInterval(() => {
-      document.getElementById(selectedElementID).style.boxShadow = "0px 0px whitesmoke";
+    
+    document.getElementById(selectedElementID).style.boxShadow = "0px 0px whitesmoke";
+    var btnClick = setInterval(() => {
+      
+      document.getElementById(selectedElementID).style.boxShadow = "0px 4px #ff7c87";
     }, 100);
 
     $("#eyes").animate({
@@ -405,7 +406,7 @@ function nav (move) {
           },'fast');
           
          
-          //$("#calculator").effect("shake");
+          $("#calculator").effect("shake");
           
           
          if(soundOnNow){

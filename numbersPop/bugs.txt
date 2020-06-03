@@ -3,12 +3,9 @@ levelControl() interaction
 
 
 known bugs:
-level completat + settings + inapoi ==> nu progreseaza dar reseteaza nivelul iar daca reprti nu incrementeaza scorul
-
-culorile se schimba daca selectezi butoanele prea repede
 =======
 bug: levelControl() interaction
-bug: buttons don't click animate correctly
+bug: buttons don't click animate correctly (unsolved)
 bug: at color change level reset (now it is adding up)
 bug: color update (low priority) 
 bug: complete level, settings, back, level remains the same (reset) not implementing the points
