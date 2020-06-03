@@ -252,6 +252,19 @@ html {
 	letter-spacing: 1px;
 }
 
+
+.top span.clear {
+	background: #ff9fa8;
+	box-shadow: 0px 4px #ff7c87;
+	color: white;
+}
+
+.top span.clear:hover {
+	background: #f68991;
+	box-shadow: 0px 4px #d3545d;
+	color: white;
+}
+
 #bckImg{
 	position: relative;
 	width: 60px;
@@ -295,6 +308,9 @@ html {
 
 /* Remove right margins from operator keys */
 /* style different type of keys (operators/evaluate/clear) differently */
+
+
+
 .keys span.operator {
 	background: #FFF0F5;
 	margin-right: 0;
@@ -306,12 +322,6 @@ html {
 	color: #888e5f;
 }
 
-.top span.clear {
-	background: #ff9fa8;
-	box-shadow: 0px 4px #ff7c87;
-	color: white;
-}
-
 .keys span.clear{
   background: #ff9fa8;
 	box-shadow: 0px 4px #ff7c87;
@@ -321,7 +331,7 @@ html {
 /* Some hover effects */
 .keys span:hover {
 	background: #ffaf64;
-	box-shadow: 0px 4px #4db1be;
+	/*box-shadow: 0px 4px #4db1be;*/
 	color: white;
 }
 
@@ -332,18 +342,14 @@ html {
 	color: #ffffff;
 }
 
-.top span.clear:hover {
-	background: #f68991;
-	box-shadow: 0px 4px #d3545d;
-	color: white;
-}
+
 
 /* Simulating "pressed" effect on active state of the keys by removing the box-shadow and moving the keys down a bit */
 .keys span:focus {
-	box-shadow: 0px 0px whitesmoke;
-	top: 14px;
-	
+	/*box-shadow: 0px 0px whitesmoke;*/
+	/*top: 14px;*/
 }
+
 	
 .items.bmid{
 	background: #f68991;
@@ -356,9 +362,11 @@ html {
 	box-shadow: 0px 4px #9da853;
 	color: #2d2d2d;
 }
-.items{
 
-	color:black;
+.items.q:active{
+	background-color: #3e8e41;
+	box-shadow: 0 5px #666;
+	transform: translateY(10px);
 }
 
 
