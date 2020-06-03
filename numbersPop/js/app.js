@@ -6,8 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
     //$("#e").text("L");
     //$("#calculator").css("background-color"); 
     let pusher = document.getElementById("pusher");
+
+    
     if(window.innerWidth >= window.innerHeight){
-      
+      //horizontal
       let eyeszz = document.getElementById("eyes");
       pusher.style.paddingLeft = "22%";
       pusher.style.paddingRight = "22%";
@@ -28,7 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
       
       document.getElementById("j").tabIndex = 8;
       //document.getElementById("moves").style.paddingBottom = "0%";
+
+      //
     }else if(window.innerWidth < window.innerHeight){
+      //vertical
       pusher.style.paddingLeft = "100px";
       pusher.style.paddingRight = "110%";
       pusher.style.paddingTop = "0%";
@@ -71,10 +76,11 @@ window.addEventListener("load", function() {
   this.document.getElementById('bImg').src = "_assets/playBtn.png";
  
   $("#objective").text(allGreetingsTxts[actualLanguageNum]);
-  $('#moves').text(localStorage['highScoreKey'] || '100');
+  //$('#moves').text(localStorage['highScoreKey'] || '100');
   $('#progressionSoFar').text(levelLeftAt.toString()+'/35');
   $("#wrapper").text( " Welcome to Numbers Pop!\nNice. ");
 });
+
 
 
 function startScreen(){
@@ -84,6 +90,8 @@ function startScreen(){
   levelControl();
   
   currentIndex = 1;
+
+
 
 }
 
@@ -145,7 +153,7 @@ function levelControl(){
   wonGame = false;
 
   $("#CC").text("C");
-  $("#moves").text(movesLeftNumber.toString());
+  //$("#moves").text(movesLeftNumber.toString());
   $("#show-input").text(startingValue.toString());
   $("#objective").text(" ="+levelObjectiveNumber.toString()); // maybe arrow symbol: ←
 }
@@ -221,7 +229,7 @@ function handleKeydownEvent(e) {
 }
 
 function handleNumpad(){
-  $('#moves').text('pressed numpad');
+  //$('#moves').text('pressed numpad');
 }
 
 let currentIndex = 1;
@@ -374,7 +382,7 @@ function nav (move) {
         
         operationControl($("#"+selectedElementID).text());
         movesLeftNumber = movesLeftNumber - 1;
-        $("#moves").text(movesLeftNumber.toString());
+        //$("#moves").text(movesLeftNumber.toString());
 
        
         // IF PLAYER WON
@@ -393,7 +401,7 @@ function nav (move) {
           $("#"+selectedElementID).text(tickMark);
           
           
-          $("#moves").text(movesLeftNumber.toString());
+          //$("#moves").text(movesLeftNumber.toString());
 
          
 
@@ -423,7 +431,7 @@ function nav (move) {
             levelLeftAt = levelLeftAt + 1;
             
             levelControl();
-            $("#moves").text(movesLeftNumber.toString());
+            //$("#moves").text(movesLeftNumber.toString());
           }
 
         }

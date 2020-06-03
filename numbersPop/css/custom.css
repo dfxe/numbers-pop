@@ -33,7 +33,7 @@ html, body {
 
 #reelGrid{
   display: grid;
-  grid-template-columns: 20% auto;
+  grid-template-columns: auto auto;
   
 }
 /*id's*/ 
@@ -185,6 +185,16 @@ html {
   font-size: 1.0em;
   text-align: left;
   padding-top: 10%;
+}
+
+.movesDots{
+	
+		height: 10px;
+		width: 10px;
+		background-color:red;
+		border-radius: 50%;
+		display: inline-block;
+	  
 }
 
 .kTu{
