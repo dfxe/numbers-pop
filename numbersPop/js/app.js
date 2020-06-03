@@ -282,10 +282,11 @@ function nav (move) {
     }
 
     //click animation
-    document.getElementById(selectedElementID).style.boxShadow = "0px 0px whitesmoke";
+    document.getElementById(selectedElementID).style.boxShadow = "0px 4px #ff7c87";
+   
     setInterval(() => {
-      document.getElementById(selectedElementID).style.boxShadow = "0px 0px 10px 10px black";
-    }, 200);
+      document.getElementById(selectedElementID).style.boxShadow = "0px 0px whitesmoke";
+    }, 100);
 
     $("#eyes").animate({
       //width: '2.0rem',
