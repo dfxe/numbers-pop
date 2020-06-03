@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("j").tabIndex = 8;
       //document.getElementById("moves").style.paddingBottom = "0%";
 
-      //
+      
     }else if(window.innerWidth < window.innerHeight){
       //vertical
       pusher.style.paddingLeft = "100px";
@@ -619,157 +619,26 @@ function soundOnOff(){
 }
 
 function operationControl(ops){
-  switch(ops) {
-      case 'x0':
-      startingValue = startingValue * 0;
-      
+  var expressionQ = ops;
+  switch (expressionQ[0]) {
+      case 'x':
+        startingValue = startingValue *  parseInt(expressionQ[1]);
       break;
-      case 'x2':
-      startingValue = startingValue * 2;
-      
+      case '÷':
+        startingValue = startingValue /  parseInt(expressionQ[1]);
       break;
-      case 'x3':
-      startingValue = startingValue * 3;
-      
+      case '+':
+        startingValue = startingValue +  parseInt(expressionQ[1]);
       break;
-      case 'x4':
-      startingValue = startingValue * 4;
-      
+      case '-':
+        startingValue = startingValue - parseInt(expressionQ[1]);
       break;
-      case 'x5':
-      startingValue = startingValue * 5;
-      
+  
+    default:
       break;
-      case 'x6':
-      startingValue = startingValue * 6;
-      
-      break;
-      case 'x7':
-      startingValue = startingValue * 7;
-      
-      break;
-      case 'x8':
-      startingValue = startingValue * 8;
-      
-      break;
-      case 'x9':
-      startingValue = startingValue * 9;
-      
-      break;
-      case '+1':
-      startingValue = startingValue + 1;
-      
-      break;
-      case '+2':
-      startingValue = startingValue + 2;
-      
-      break;
-      case '+3':
-      startingValue = startingValue + 3;
-      
-      break;
-      case '+4':
-      startingValue = startingValue + 4;
-      
-      break;
-      case '+5':
-      startingValue = startingValue + 5;
-      
-      break;
-      case '+6':
-      startingValue = startingValue + 6;
-      
-      break;
-      case '+7':
-      startingValue = startingValue + 7;
-      
-      break;
-      case '+8':
-      startingValue = startingValue + 8;
-      
-      break;
-      case '+9':
-      startingValue = startingValue + 9;
-      
-      break;
-      case '-1':
-      startingValue = startingValue - 1;
-      
-      break;
-      case '-2':
-      startingValue = startingValue - 2;
-      
-      break;
-      case '-3':
-      startingValue = startingValue - 3;
-      
-      break;
-      case '-4':
-      startingValue = startingValue - 4;
-      
-      break;
-      case '-5':
-      startingValue = startingValue - 5;
-      
-      break;
-      case '-6':
-      startingValue = startingValue - 6;
-      
-      break;
-      case '-7':
-      startingValue = startingValue - 7;
-      
-      break;
-      case '-8':
-      startingValue = startingValue - 8;
-      
-      break;
-      case '-9':
-      startingValue = startingValue - 9;
-      
-      break;
-      //division
-      case '÷1':
-      startingValue = startingValue / 1;
-      
-      break;
-      case '÷2':
-      startingValue = startingValue / 2;
-      
-      break;
-      case '÷3':
-      startingValue = startingValue / 3;
-      
-      break;
-      case '÷4':
-      startingValue = startingValue / 4;
-      
-      break;
-      case '÷5':
-      startingValue = startingValue / 5;
-      
-      break;
-      case '÷6':
-      startingValue = startingValue / 6;
-      
-      break;
-      case '÷7':
-      startingValue = startingValue / 7;
-      
-      break;
-      case '÷8':
-      startingValue = startingValue / 8;
-      
-      break;
-      case '÷9':
-      startingValue = startingValue / 9;
-      
-      break;
-
   }
-
+  
   $("#show-input").text(startingValue);
-
 }
 
 var buildr1 = 0; 
