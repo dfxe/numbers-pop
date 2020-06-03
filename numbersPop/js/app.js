@@ -13,16 +13,17 @@ document.addEventListener("DOMContentLoaded", () => {
       let eyeszz = document.getElementById("eyes");
       pusher.style.paddingLeft = "22%";
       pusher.style.paddingRight = "22%";
-      pusher.style.paddingTop = "0";
+      pusher.style.paddingTop = "0%";
       pusher.style.paddingBottom = "0%";
       
       //$("#b").hide();
       //$("#c").hide();
       
       //$("#divide").hide();
-      eyeszz.style.top = "0px";
-      eyeszz.style.width = "72%";
-      eyeszz.style.height = "80%";
+      eyeszz.style.top = "3.3px";
+      eyeszz.style.left = "58px";
+      eyeszz.style.width = "58%";
+      eyeszz.style.height = "65%";
       eyeszz.style.paddingBottom = "35%";
 
       document.getElementById("DD").className = 'hidden';
