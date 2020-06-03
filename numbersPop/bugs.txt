@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 levelControl() interaction
 
 
@@ -15,4 +15,4 @@ bug: complete level, settings, back, level remains the same (reset) not implemen
 bug: buttons anims at press needs to press 
 bug: centre buttons
 bug: add "?" tutorial btn
->>>>>>> 4a1253114d8b17e8e4255e46945b99ed66abcb29
+
