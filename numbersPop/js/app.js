@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
  
 
-  $(document).ready(function(){
+  
     //$("#e").text("L");
     //$("#calculator").css("background-color"); 
     let pusher = document.getElementById("pusher");
@@ -16,10 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
       pusher.style.paddingTop = "0%";
       pusher.style.paddingBottom = "0%";
       
-      //$("#b").hide();
-      //$("#c").hide();
-      
-      //$("#divide").hide();
+     
       eyeszz.style.top = "3.3px";
       eyeszz.style.left = "58px";
       eyeszz.style.width = "58%";
@@ -30,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
       $("#DD").hide();
       
       document.getElementById("j").tabIndex = 8;
-      //document.getElementById("moves").style.paddingBottom = "0%";
+     
 
       
     }else if(window.innerWidth < window.innerHeight){
@@ -42,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       pusher.style.padding = "12%";
     
       document.getElementById("DD").className = 'hidden';
-      //$("#show-input").text("loaded");
+      
      
     }
     
@@ -51,8 +48,8 @@ document.addEventListener("DOMContentLoaded", () => {
     currentIndex = 3;
   
 
-    //document.head.style.backgroundColor = setRandomColor();
-  });
+    
+
 });
 window.addEventListener("load", function() {
   started = false;
@@ -156,7 +153,7 @@ function levelControl(){
   wonGame = false;
 
   $("#CC").text("C");
-  //$("#moves").text(movesLeftNumber.toString());
+  
   $("#show-input").text(startingValue.toString());
   $("#objective").text(" ="+levelObjectiveNumber.toString()); // maybe arrow symbol: ←
 
@@ -167,15 +164,16 @@ function movesLeftFeedback(){
   $('.movesDots').each(function(i) {
     if(i < movesLeftNumber){
       $(this).animate({
-        //width: '2.0rem',
+       
         opacity: '1.0'
       },'fast');
     }else{
       $(this).animate({
-        //width: '2.0rem',
-        opacity: '0.2'
+       
+        opacity: '0.1'
       },'fast');
     }
+
   });
 }
 
@@ -274,7 +272,7 @@ let settingsImgs = [];
 /*settings vars end*/
 setInterval(function(){ $("#eyes").animate({
 
-  //width: '2.0rem',
+ 
   opacity: '0.1'
 },'fast'); }, 4000);
 
@@ -598,8 +596,8 @@ function changeVisuals(){
     actualVisualNum = 0; 
     console.log(actualVisualNum);
   }else{
-  actualVisualNum ++;
-  console.log(actualVisualNum);
+    actualVisualNum ++;
+    console.log(actualVisualNum);
   }
 
   if(actualVisualNum <= 4){

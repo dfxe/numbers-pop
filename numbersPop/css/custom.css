@@ -2,9 +2,8 @@ html, body {
   /*margin: auto;*/
  padding: 1.0rem;
  height: 100%;
- overflow: hidden;
- height: 100%;
- margin: 0;
+ margin: auto;
+
 }
 
 .btn-bd-primary{font-weight:500;color:#af97d3;border-color:#89b3cf}
@@ -90,15 +89,12 @@ html {
 	position: top; 
 	margin: auto;
 	padding: 10px 5% 5%;
-	
-	
-	/*background:linear-gradient( 30deg,#FFD0D2, #009de4  );*/
+
 	
   background: #453b44;
   border-radius: 10px;
   border-bottom-color: black;
-  box-shadow: 10px 4px #453b44, 10px 10px 15px rgba(0, 0, 0, 0.2);
-  
+  box-shadow: 10px 10px #453b44, 10px 10px 15px rgba(0, 0, 0, 0.2);
   margin: auto;
   
  
@@ -199,8 +195,13 @@ html {
 					#d3545d 10px
 				);
 		border-radius: 50%;
-		display: inline-block;
+		display: inline-flex;
 	  
+}
+
+#movesDotsId{
+	margin:auto;
+	width: 50%;
 }
 
 .kTu{
@@ -320,6 +321,8 @@ html {
 	
 	/* Smoothing out hover and active states using css3 transitions */
 	transition: all 0.2s ease;
+
+	
 }
 
 /* Remove right margins from operator keys */
@@ -371,18 +374,14 @@ html {
 	background: #f68991;
 	box-shadow: 0px 4px #d3545d;
 	color: white;
+	width: 33px;
 }
 
 .items.q{
 	background: whitesmoke;
 	box-shadow: 0px 4px #9da853;
 	color: #2d2d2d;
-}
-
-.items.q:active{
-	background-color: #3e8e41;
-	box-shadow: 0 5px #666;
-	transform: translateY(10px);
+	width: 33px;
 }
 
 
@@ -411,5 +410,9 @@ html {
   .column {
       width: 100%;
   }
+}
+
+.keys{
+	align-content: center;
 }
 
