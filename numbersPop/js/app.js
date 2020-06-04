@@ -63,6 +63,8 @@ window.addEventListener("load", function() {
 
   movesLeftFeedback();
 
+  //starter interval
+  
   //document.getElementById("tutorialPanel").style.display = "block";
 });
 
@@ -119,7 +121,7 @@ let levelObjectiveNumber = 0;
 let maxLevelsNow = 7; 
 var resetOn = false;
 function levelControl(){
-  //shuffleFirstFive();
+
   
   if(resetOn == true){
     clearResetLevel();
@@ -130,8 +132,8 @@ function levelControl(){
     
   }
 
-  
-  
+
+
   //save high score
   localStorage['highScoreKey'] = levelLeftAt.toString(); 
 
@@ -140,12 +142,10 @@ function levelControl(){
   //useful reset. 
   wonGame = false;
 
-  
-
   $("#CC").text("C");
   
   $("#show-input").text(startingValue.toString());
-  $("#objective").text(" ="+levelObjectiveNumber.toString()); // maybe arrow symbol: ←
+  $("#objective").text(levelObjectiveNumber.toString()); // maybe arrow symbol: ←
   
   
   movesLeftFeedback();
@@ -191,11 +191,6 @@ function computeProgression(){
   }
 }
 
-function shuffleFirstFive(){
-  if(started == false){
-    levelLeftAt = randomIntFromRange(0,4);
-  }
-}
 
 function randomIntFromRange(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -498,6 +493,7 @@ function nav (move) {
   
   started = true;
   // START GAME
+  
   
 
   previousElementID = selectedElementID; 

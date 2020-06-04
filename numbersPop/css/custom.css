@@ -30,7 +30,6 @@ html, body {
   height: auto;
 }
 
-
 /*id's*/ 
 #screen-mod{
   
@@ -156,6 +155,13 @@ html {
   font-size: 120%;
   padding-top:3%;
 
+
+
+}
+
+#objectiveGrid{
+  display: grid;
+  grid-template-columns: 1 1;
 }
 
 #screen-mod #show-input{
