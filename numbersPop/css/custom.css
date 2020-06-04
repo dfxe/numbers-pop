@@ -190,7 +190,13 @@ html {
 	
 		height: 10px;
 		width: 10px;
-		background-color:red;
+		background: repeating-linear-gradient(
+			45deg,
+			rgb(255, 120, 29),
+			#d3545d 10px,
+			rgb(255, 120, 29) 10px, 
+			#d3545d 10px
+		);
 		border-radius: 50%;
 		display: inline-flex;
 	  
@@ -463,13 +469,23 @@ html {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: rgb(202, 235, 255);
+	background-color: rgb(62, 135, 160);
 	z-index: 2;
 }
 
 #tutImg{
 	position: fixed;
-	top: 50%;
+	top: 80%;
 	left: 40%;
+}
+
+#tutGif{
+	position: fixed;
+	
+	width: 70%;
+	height: 70%;
+
+	top: 10%;
+	left: 15%;
 }
 
