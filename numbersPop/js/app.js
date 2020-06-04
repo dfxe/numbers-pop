@@ -80,7 +80,7 @@ window.addEventListener("load", function() {
 
   movesLeftFeedback();
 
-  document.getElementById("tutorialPanel").style.display = "block";
+  //document.getElementById("tutorialPanel").style.display = "block";
 });
 
 
@@ -316,6 +316,8 @@ function nav (move) {
     }
 
     //click animation
+
+    //movesLeftFeedback();
     
     document.getElementById(selectedElementID).style.boxShadow = "0px 0px whitesmoke";
     var btnClick = setInterval(() => {
@@ -408,7 +410,7 @@ function nav (move) {
         
         operationControl($("#"+selectedElementID).text());
         movesLeftNumber = movesLeftNumber - 1;
-
+        movesLeftFeedback();
        
 
        
@@ -434,9 +436,9 @@ function nav (move) {
           
           movesLeftFeedback();
           
-          $("#show-input").fadeIn('slow');
-          $("#objective").fadeIn('slow');
-          $(".progressionSoFar").fadeIn(500);
+          //$("#show-input").fadeIn('slow');
+          //$("#objective").fadeIn('slow');
+          //$(".progressionSoFar").fadeIn(500);
          
 
         } else if(movesLeftNumber == 0){
@@ -449,7 +451,7 @@ function nav (move) {
           
          
           //$("#calculator").effect("shake");
-          
+          movesLeftFeedback();
           
          if(soundOnNow){
           document.getElementById('loseSound').play();
