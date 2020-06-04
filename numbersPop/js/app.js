@@ -1,13 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
  
-
-  
-    //$("#e").text("L");
-    //$("#calculator").css("background-color"); 
     let pusher = document.getElementById("pusher");
-
-    
     if(window.innerWidth >= window.innerHeight){
       //horizontal
       let eyeszz = document.getElementById("eyes");
@@ -27,9 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       $("#DD").hide();
       
       document.getElementById("j").tabIndex = 8;
-     
-
-      
+    
     }else if(window.innerWidth < window.innerHeight){
       //vertical
       pusher.style.paddingLeft = "100px";
@@ -37,19 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
       pusher.style.paddingTop = "0%";
       pusher.style.paddingBottom = "0%";
       pusher.style.padding = "12%";
-    
-    
-      
-     
     }
-    
-    
+  
     //setting starting index
     currentIndex = 3;
   
-
-    
-
 });
 window.addEventListener("load", function() {
   started = false;
@@ -323,13 +307,6 @@ function nav (move) {
         $("#"+selectedElementID).toggleClass('active');
       }, 200);
     }
-    //movesLeftFeedback();
-    
-    /*document.getElementById(selectedElementID).style.boxShadow = "0px 0px whitesmoke";
-    var btnClick = setInterval(() => {
-      
-      document.getElementById(selectedElementID).style.boxShadow = "0px 4px #ff7c87";
-    }, 100);*/
 
     $("#eyes").animate({
       //width: '2.0rem',
@@ -654,8 +631,13 @@ function operationControl(ops){
     default:
       break;
   }
-  
-  $("#show-input").text(startingValue);
+
+  $("#show-input").fadeOut(200);
+  setTimeout(() => {
+    $("#show-input").fadeIn(100);
+    $("#show-input").text(startingValue);
+  }, 100);
+ 
 }
 
 var buildr1 = 0; 
