@@ -1,15 +1,10 @@
-
-levelControl() interaction
-
-
 known bugs:
 =======
 bug: levelControl() interaction
-bug: buttons don't click animate correctly (unsolved)
+bug: buttons don't click animate correctly (done)
 bug: at color change level reset (now it is adding up)
 bug: color update (low priority) 
 bug: complete level, settings, back, level remains the same (reset) not implementing the points
-bug: buttons anims at press needs to press 
-bug: centre buttons
+bug: centre buttons (done)
 bug: add "?" tutorial btn
 

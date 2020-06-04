@@ -379,6 +379,54 @@ html {
 }
 
 
+#d.active, #d:active{
+	background: darkolivegreen;
+	box-shadow: 0px 1px #9da853;
+	color: #2d2d2d;
+}
+
+#b.active, #b:active {
+	background-color: #3e8e41;
+	box-shadow: 0 2px #666;
+	transform: translateY(2px);
+}
+
+#c.active, #c:active {
+	background-color: #3e8e41;
+	box-shadow: 0 2px #666;
+	transform: translateY(2px);
+}
+
+#e.active, #e:active {
+	background-color: #3e8e41;
+	box-shadow: 0 2px #666;
+	transform: translateY(2px);
+}
+
+#f.active, #f:active {
+	background-color: #3e8e41;
+	box-shadow: 0 2px #666;
+	transform: translateY(2px);
+}
+
+#g.active, #g:active {
+	background-color: #3e8e41;
+	box-shadow: 0 2px #666;
+	transform: translateY(2px);
+}
+
+#j.active, #j:active {
+	background-color: #3e8e41;
+	box-shadow: 0 2px #666;
+	transform: translateY(2px);
+}
+
+#CC.active, CC:active{
+	background-color: #3e8e41;
+	box-shadow: 0 2px #666;
+	transform: translateY(2px);
+}
+
 .hidden{
 	background: #f1ff92;
 	box-shadow: 0px 4px #9da853;

@@ -168,6 +168,7 @@ function levelControl(){
 }
 
 function movesLeftFeedback(){
+  
   $('.movesDots').each(function(i) {
     if(i < movesLeftNumber){
       $(this).animate({
@@ -182,6 +183,7 @@ function movesLeftFeedback(){
     }
 
   });
+  
 }
 
 
@@ -282,10 +284,7 @@ setInterval(function(){ $("#eyes").animate({
   opacity: '0.1'
 },'fast'); }, 4000);
 
-
-
-
-
+let alreadyPressedOK = false;
 function nav (move) {
   
 
@@ -309,21 +308,28 @@ function nav (move) {
   }
 
 
-  if(move == 0){
+  if(move == 0 && alreadyPressedOK==false){
     if((window.innerWidth < window.innerHeight &&
        selectedElementID !== 'g' && selectedElementID !=='c') || 
        window.innerWidth >= window.innerHeight && selectedElementID !=='d'){
     }
 
     //click animation
-
+    if(alreadyPressedOK==false){
+      alreadyPressedOK=true;
+      $("#"+selectedElementID).toggleClass('active');
+      setTimeout(() => {
+        alreadyPressedOK=false;
+        $("#"+selectedElementID).toggleClass('active');
+      }, 200);
+    }
     //movesLeftFeedback();
     
-    document.getElementById(selectedElementID).style.boxShadow = "0px 0px whitesmoke";
+    /*document.getElementById(selectedElementID).style.boxShadow = "0px 0px whitesmoke";
     var btnClick = setInterval(() => {
       
       document.getElementById(selectedElementID).style.boxShadow = "0px 4px #ff7c87";
-    }, 100);
+    }, 100);*/
 
     $("#eyes").animate({
       //width: '2.0rem',
@@ -367,7 +373,7 @@ function nav (move) {
     }else{
       document.getElementById('settings').src = "_assets/settings.png";
 
-      document.getElementById('dImg').src = "_assets/Empty.png";
+      document.getElementById('dImg').src = "_assets/eyesn.png";
       document.getElementById('bImg').src = "_assets/Empty.png";
       document.getElementById('cImg').src = "_assets/Empty.png";
       atSettingsMenu = false;
