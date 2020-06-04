@@ -1,13 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
  
-
-  $(document).ready(function(){
-    //$("#e").text("L");
-    //$("#calculator").css("background-color"); 
     let pusher = document.getElementById("pusher");
-
-    
     if(window.innerWidth >= window.innerHeight){
       //horizontal
       let eyeszz = document.getElementById("eyes");
@@ -16,23 +10,17 @@ document.addEventListener("DOMContentLoaded", () => {
       pusher.style.paddingTop = "0%";
       pusher.style.paddingBottom = "0%";
       
-      //$("#b").hide();
-      //$("#c").hide();
-      
-      //$("#divide").hide();
+     
       eyeszz.style.top = "3.3px";
       eyeszz.style.left = "58px";
       eyeszz.style.width = "58%";
       eyeszz.style.height = "65%";
       eyeszz.style.paddingBottom = "35%";
 
-      document.getElementById("DD").className = 'hidden';
-      $("#DD").hide();
+    
       
       document.getElementById("j").tabIndex = 8;
-      //document.getElementById("moves").style.paddingBottom = "0%";
-
-      //
+    
     }else if(window.innerWidth < window.innerHeight){
       //vertical
       pusher.style.paddingLeft = "100px";
@@ -40,19 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
       pusher.style.paddingTop = "0%";
       pusher.style.paddingBottom = "0%";
       pusher.style.padding = "12%";
-    
-      document.getElementById("DD").className = 'hidden';
-      //$("#show-input").text("loaded");
-     
     }
-    
-    
+  
     //setting starting index
     currentIndex = 3;
   
-
-    //document.head.style.backgroundColor = setRandomColor();
-  });
 });
 window.addEventListener("load", function() {
   started = false;
@@ -82,20 +62,25 @@ window.addEventListener("load", function() {
   $("#wrapper").text( " Welcome to Numbers Pop!\nNice. ");
 
   movesLeftFeedback();
+
+  //starter interval
+  
+  //document.getElementById("tutorialPanel").style.display = "block";
 });
 
 
 
 function startScreen(){
- 
   startedGameNowUnique = true;
   document.getElementById('bImg').src = "_assets/Empty.png";
   levelControl();
   
   currentIndex = 1;
+  
+}
 
-
-
+function tutorialWalkthrough(){
+  
 }
 
 let actualLanguageNum = -1;
@@ -136,7 +121,7 @@ let levelObjectiveNumber = 0;
 let maxLevelsNow = 7; 
 var resetOn = false;
 function levelControl(){
-  //shuffleFirstFive();
+
   
   if(resetOn == true){
     clearResetLevel();
@@ -146,7 +131,9 @@ function levelControl(){
     document.getElementById("progressionSoFar").style.maxWidth = computeProgression();
     
   }
-  
+
+
+
   //save high score
   localStorage['highScoreKey'] = levelLeftAt.toString(); 
 
@@ -156,27 +143,31 @@ function levelControl(){
   wonGame = false;
 
   $("#CC").text("C");
-  //$("#moves").text(movesLeftNumber.toString());
+  
   $("#show-input").text(startingValue.toString());
-  $("#objective").text(" ="+levelObjectiveNumber.toString()); // maybe arrow symbol: ←
-
+  $("#objective").text(levelObjectiveNumber.toString()); // maybe arrow symbol: ←
+  
+  
   movesLeftFeedback();
 }
 
 function movesLeftFeedback(){
+  
   $('.movesDots').each(function(i) {
     if(i < movesLeftNumber){
       $(this).animate({
-        //width: '2.0rem',
+       
         opacity: '1.0'
       },'fast');
     }else{
       $(this).animate({
-        //width: '2.0rem',
-        opacity: '0.2'
+       
+        opacity: '0.1'
       },'fast');
     }
+
   });
+  
 }
 
 
@@ -189,8 +180,7 @@ function levelOneBtnDisables(){
 }
 
 function computeProgression(){
-  //the max is 45 (100%), after that the progress bar doesn't appear
-  
+  //the max is 35 (100%), after that the progress bar doesn't appear
   $('#progressionSoFar').text(levelLeftAt.toString()+'/35');
   let progressNow = 0; 
   if(levelLeftAt <= 35){
@@ -201,11 +191,6 @@ function computeProgression(){
   }
 }
 
-function shuffleFirstFive(){
-  if(started == false){
-    levelLeftAt = randomIntFromRange(0,4);
-  }
-}
 
 function randomIntFromRange(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -274,14 +259,11 @@ let settingsImgs = [];
 /*settings vars end*/
 setInterval(function(){ $("#eyes").animate({
 
-  //width: '2.0rem',
+ 
   opacity: '0.1'
 },'fast'); }, 4000);
 
-
-
-
-
+let alreadyPressedOK = false;
 function nav (move) {
   
 
@@ -305,19 +287,21 @@ function nav (move) {
   }
 
 
-  if(move == 0){
+  if(move == 0 && alreadyPressedOK==false){
     if((window.innerWidth < window.innerHeight &&
        selectedElementID !== 'g' && selectedElementID !=='c') || 
        window.innerWidth >= window.innerHeight && selectedElementID !=='d'){
     }
 
     //click animation
-    
-    document.getElementById(selectedElementID).style.boxShadow = "0px 0px whitesmoke";
-    var btnClick = setInterval(() => {
-      
-      document.getElementById(selectedElementID).style.boxShadow = "0px 4px #ff7c87";
-    }, 100);
+    if(alreadyPressedOK==false){
+      alreadyPressedOK=true;
+      $("#"+selectedElementID).toggleClass('active');
+      setTimeout(() => {
+        alreadyPressedOK=false;
+        $("#"+selectedElementID).toggleClass('active');
+      }, 200);
+    }
 
     $("#eyes").animate({
       //width: '2.0rem',
@@ -361,7 +345,7 @@ function nav (move) {
     }else{
       document.getElementById('settings').src = "_assets/settings.png";
 
-      document.getElementById('dImg').src = "_assets/Empty.png";
+      document.getElementById('dImg').src = "_assets/eyesn.png";
       document.getElementById('bImg').src = "_assets/Empty.png";
       document.getElementById('cImg').src = "_assets/Empty.png";
       atSettingsMenu = false;
@@ -404,8 +388,8 @@ function nav (move) {
         
         operationControl($("#"+selectedElementID).text());
         movesLeftNumber = movesLeftNumber - 1;
-
         movesLeftFeedback();
+       
 
        
         // IF PLAYER WON
@@ -416,22 +400,27 @@ function nav (move) {
           }
 
           wonGame = true;
-          $(".progressionSoFar").fadeIn(500);
+          confetti.start(1200, 50, 150);
+
+         
           
           levelLeftAt = levelLeftAt + 1;
           $("#objective").text(tickMark+allNextTxts[actualLanguageNum]+levelLeftAt);
 
-          movesLeftFeedback();
+         
 
           $("#"+selectedElementID).text(tickMark);
           
           
           movesLeftFeedback();
-
+          
+          //$("#show-input").fadeIn('slow');
+          //$("#objective").fadeIn('slow');
+          //$(".progressionSoFar").fadeIn(500);
          
 
         } else if(movesLeftNumber == 0){
-          $("#"+selectedElementID).text("X");
+          $("#"+selectedElementID).text("←");
           $("#objective").text(allGameOverTxts[actualLanguageNum]);
           $("#eyes").animate({
             //width: '2.0rem',
@@ -439,8 +428,8 @@ function nav (move) {
           },'fast');
           
          
-          $("#calculator").effect("shake");
-          
+          //$("#calculator").effect("shake");
+          movesLeftFeedback();
           
          if(soundOnNow){
           document.getElementById('loseSound').play();
@@ -505,6 +494,7 @@ function nav (move) {
   started = true;
   // START GAME
   
+  
 
   previousElementID = selectedElementID; 
   previousElementIDColor= $("#"+previousElementID).css("background-color");
@@ -515,7 +505,7 @@ function nav (move) {
   if(movesLeftNumber == 0){
     if(selectedElementID != 'j' && selectedElementID != 'd' && selectedElementID != 'b' && selectedElementID != 'c' ){
       if((startingValue != levelObjectiveNumber)){
-      $("#"+selectedElementID).text("X");
+      $("#"+selectedElementID).text("←");
       }else{
         $("#"+selectedElementID).text(tickMark);
       }
@@ -544,7 +534,7 @@ function screenTransition(){
 }
 
 function setRandomColor() {
-  //'#'+(Math.random()*0xFFFFFF<<0).toString(16));
+  
   $("#calculator").css("background-color",  '#'+Math.random().toString(16).slice(-6));
   $("#screen-mod").css("background-color", '#'+Math.random().toString(16).slice(-6));
   let arr = Math.random().toString(16).slice(-6);
@@ -598,8 +588,8 @@ function changeVisuals(){
     actualVisualNum = 0; 
     console.log(actualVisualNum);
   }else{
-  actualVisualNum ++;
-  console.log(actualVisualNum);
+    actualVisualNum ++;
+    console.log(actualVisualNum);
   }
 
   if(actualVisualNum <= 4){
@@ -619,157 +609,31 @@ function soundOnOff(){
 }
 
 function operationControl(ops){
-  switch(ops) {
-      case 'x0':
-      startingValue = startingValue * 0;
-      
+  
+  switch (ops[0]) {
+      case 'x':
+        startingValue = startingValue * parseInt(ops[1]);
       break;
-      case 'x2':
-      startingValue = startingValue * 2;
-      
+      case '÷':
+        startingValue = startingValue / parseInt(ops[1]);
       break;
-      case 'x3':
-      startingValue = startingValue * 3;
-      
+      case '+':
+        startingValue = startingValue + parseInt(ops[1]);
       break;
-      case 'x4':
-      startingValue = startingValue * 4;
-      
+      case '-':
+        startingValue = startingValue - parseInt(ops[1]);
       break;
-      case 'x5':
-      startingValue = startingValue * 5;
-      
+  
+    default:
       break;
-      case 'x6':
-      startingValue = startingValue * 6;
-      
-      break;
-      case 'x7':
-      startingValue = startingValue * 7;
-      
-      break;
-      case 'x8':
-      startingValue = startingValue * 8;
-      
-      break;
-      case 'x9':
-      startingValue = startingValue * 9;
-      
-      break;
-      case '+1':
-      startingValue = startingValue + 1;
-      
-      break;
-      case '+2':
-      startingValue = startingValue + 2;
-      
-      break;
-      case '+3':
-      startingValue = startingValue + 3;
-      
-      break;
-      case '+4':
-      startingValue = startingValue + 4;
-      
-      break;
-      case '+5':
-      startingValue = startingValue + 5;
-      
-      break;
-      case '+6':
-      startingValue = startingValue + 6;
-      
-      break;
-      case '+7':
-      startingValue = startingValue + 7;
-      
-      break;
-      case '+8':
-      startingValue = startingValue + 8;
-      
-      break;
-      case '+9':
-      startingValue = startingValue + 9;
-      
-      break;
-      case '-1':
-      startingValue = startingValue - 1;
-      
-      break;
-      case '-2':
-      startingValue = startingValue - 2;
-      
-      break;
-      case '-3':
-      startingValue = startingValue - 3;
-      
-      break;
-      case '-4':
-      startingValue = startingValue - 4;
-      
-      break;
-      case '-5':
-      startingValue = startingValue - 5;
-      
-      break;
-      case '-6':
-      startingValue = startingValue - 6;
-      
-      break;
-      case '-7':
-      startingValue = startingValue - 7;
-      
-      break;
-      case '-8':
-      startingValue = startingValue - 8;
-      
-      break;
-      case '-9':
-      startingValue = startingValue - 9;
-      
-      break;
-      //division
-      case '÷1':
-      startingValue = startingValue / 1;
-      
-      break;
-      case '÷2':
-      startingValue = startingValue / 2;
-      
-      break;
-      case '÷3':
-      startingValue = startingValue / 3;
-      
-      break;
-      case '÷4':
-      startingValue = startingValue / 4;
-      
-      break;
-      case '÷5':
-      startingValue = startingValue / 5;
-      
-      break;
-      case '÷6':
-      startingValue = startingValue / 6;
-      
-      break;
-      case '÷7':
-      startingValue = startingValue / 7;
-      
-      break;
-      case '÷8':
-      startingValue = startingValue / 8;
-      
-      break;
-      case '÷9':
-      startingValue = startingValue / 9;
-      
-      break;
-
   }
 
-  $("#show-input").text(startingValue);
-
+  $("#show-input").fadeOut(200);
+  setTimeout(() => {
+    $("#show-input").fadeIn(100);
+    $("#show-input").text(startingValue);
+  }, 100);
+ 
 }
 
 var buildr1 = 0; 
@@ -843,7 +707,6 @@ function pickSymbol(firstFactor, secondFactor, buildrID) {
   var sicko = 0; 
   if(buildrID == 0) {
     sicko = firstFactor * secondFactor;
-    //buildr1 +=  " x " ;
    
   }else if(buildrID == 1) {
     sicko = firstFactor - secondFactor;

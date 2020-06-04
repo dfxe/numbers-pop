@@ -5,39 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
     <title>Numbers Pop</title>
     <link rel="stylesheet" type="text/css" href="css/custom.css">
-    
-      
-      
-          
-  
-         
-      
-      <!--[if lte IE 6]>
-      <style type="text/css">
-          #container {
-              height: 100%;
-          }
-      </style>
-      <![endif]-->
-  
-  
+    <link href='https://fonts.googleapis.com/css?family=Candal' rel='stylesheet'>
   </head>
 
-
-  
   <body>
    
-  
-    
+    <!--div id = "tutorialPanel">
+      
+    </div-->
+
     <div class="grid-container">
         <div id="calculator" >
-            <pan><img src="_assets/eyes3.png" id="eyes"></span>
+          
+            
            
 <div class="top">
- 
+  <span><img src="_assets/eyes3.png" id="eyes"></span>
   <div class="screen" id="screen-mod"> 
       <div>
-          <div id ="objective">10</div>
+          
+          <div id="objectiveGrid">
+            <div id ="objective">10</div>
+            <img src="_assets/targetz.png" style="align-content: left;">
+          </div>
+
+          
+          
               <div id="reelGrid">
                   <!--div id = "moves">100</div-->
                     
@@ -56,9 +49,14 @@
       </div>
 </div>
 
+  <div id="movesDotsId">
     <div class = "movesDots"></div>
     <div class = "movesDots"></div>
     <div class = "movesDots"></div>
+    <div class = "movesDots"></div>
+    <div class = "movesDots"></div>
+  </div>
+    
 	<div class="keys" id="pusher">
 
     
@@ -67,13 +65,13 @@
 		<span class = "items q" tabIndex = "2" id="f"><img src="_assets/Empty.png" id="fImg"></img>5</span>
 		<span class = "items q" tabIndex = "3" id="g"><img src="_assets/Empty.png" id="gImg"></img>6</span>
 
-		<span class = "items eval" tabIndex = "4" id = "d"><img src="_assets/Empty.png" id="dImg"></img></span>
+		<span class = "items eval" tabIndex = "4" id = "d"><img src="_assets/eyesn.png" id="dImg"></img></span>
 		<span class = "items eval" tabIndex = "5" id="b"><img src="_assets/Empty.png" id="bImg"></img></span>
 		<span class = "items eval" tabIndex = "6" id = "c"><img src="_assets/Empty.png" id="cImg"></img></span>
 
     <span class = "items clear" tabIndex = "7" id = "CC">C</span>
-    <span class = "items bmid" tabIndex = "8" id = "DD"></span>
-		<span class = "items eval" tabIndex = "9" id = "j"><img src="_assets/settings.png" id="settings"></img></span>
+    <!--span class = "items bmid" tabIndex = "8" id = "DD"></span-->
+		<span class = "items eval" tabIndex = "8" id = "j"><img src="_assets/settings.png" id="settings"></img></span>
     
     </div>
     <div class="progressBar">
@@ -95,6 +93,7 @@
     <script src="js/app.js" defer></script>
     <script src="jquery/jquery-3.4.1.min.js"></script>
     <script src="jquery/jquery-ui.js"></script>
+    <script src="js/confetti.min.js"></script>
   </body>
 
 </html>

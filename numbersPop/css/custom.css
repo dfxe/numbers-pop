@@ -2,9 +2,8 @@ html, body {
   /*margin: auto;*/
  padding: 1.0rem;
  height: 100%;
- overflow: hidden;
- height: 100%;
- margin: 0;
+ margin: auto;
+
 }
 
 .btn-bd-primary{font-weight:500;color:#af97d3;border-color:#89b3cf}
@@ -20,7 +19,7 @@ html, body {
 }
 
 .items{
-  align-content: center;
+  align-content: right;
   
 }
 
@@ -31,22 +30,18 @@ html, body {
   height: auto;
 }
 
-#reelGrid{
-  display: grid;
-  grid-template-columns: auto auto;
-  
-}
 /*id's*/ 
 #screen-mod{
   
   color:black;
   font-family:sans-serif; 
-  text-shadow: 2px 2px grey;
+  /*text-shadow: 2px 2px grey;*/
   /*padding-left: 4rem;*/
-  align-content: center;
+  align-content: right;
   border-radius: 0.5em;
   background: rgb(255, 120, 29);
-  text-align: center;
+  text-align: right;
+  font-family: Candal;
   
   margin-bottom: 5%;
   /*adding: 20px; 
@@ -65,13 +60,12 @@ html, body {
 	box-sizing: border-box;
 	
 	/* Better text styling */
-	font: bold 14px sans-serif, sans-serif;
+	/*font: bold 14px sans-serif, sans-serif;*/
+	font: 14px Candal, sans-serif;
 }
 
 
-/* Finally adding some IE9 fallbacks for gradients to finish things up */
 
-/* A nice BG gradient */
 html {
   /*height: 100%;*/
 	  /*height:auto;*/
@@ -82,7 +76,7 @@ html {
 	background-size: cover;
 }
 
-/* Using box shadows to create 3D effects */
+
 #calculator {
 	
 	width: auto;
@@ -90,19 +84,16 @@ html {
 	position: top; 
 	margin: auto;
 	padding: 10px 5% 5%;
-	
-	
-	/*background:linear-gradient( 30deg,#FFD0D2, #009de4  );*/
+
 	
   background: #453b44;
   border-radius: 10px;
   border-bottom-color: black;
-  box-shadow: 10px 4px #453b44, 10px 10px 15px rgba(0, 0, 0, 0.2);
-  
+  box-shadow: 10px 10px #1b191b1f, 10px 10px 15px rgba(0, 0, 0, 0.2);
   margin: auto;
   
  
-  border: 2px solid darksalmon;
+  border: 4px solid darksalmon;
 
   
   animation-name: beginAnim; 
@@ -160,10 +151,17 @@ html {
 }
 
 #screen-mod #objective{
-  text-align: right;
+  text-align: left;
   font-size: 120%;
   padding-top:3%;
 
+
+
+}
+
+#objectiveGrid{
+  display: grid;
+  grid-template-columns: 1 1;
 }
 
 #screen-mod #show-input{
@@ -180,12 +178,7 @@ html {
   padding-bottom: 10%;
 }
 
-#moves{
-  font-family: sans-serif;
-  font-size: 1.0em;
-  text-align: left;
-  padding-top: 10%;
-}
+
 
 .movesDots{
 	
@@ -193,8 +186,13 @@ html {
 		width: 10px;
 		background-color:red;
 		border-radius: 50%;
-		display: inline-block;
+		display: inline-flex;
 	  
+}
+
+#movesDotsId{
+	margin:auto;
+	width: 50%;
 }
 
 .kTu{
@@ -212,10 +210,13 @@ html {
 	max-width: 32em;
 	margin: 4px;
 	background: dimgray;
-	border: 2px solid dimgrey;
+	
+	border: 2px 2px inset dimgrey;
 	border-radius: 5px;
-	border-style: solid;
-
+	border-style: 1px 1px inset;
+	
+	text-shadow: 3px 3px rgba(48, 48, 48, 0.363);
+	text-indent: 40%;
   }
   
 .progression {
@@ -228,19 +229,20 @@ html {
   );
 	padding: 4px;
 	border-radius: 4px;
+	
 }
 
 #progressionSoFar{
-	text-align: center;
+	text-align: right;
 	max-width: 0%;
 }
 
-/* Top portion */
+
 .top span.clear {
 	float: left;
 }
 
-/* Inset shadow on the screen to create indent */
+
 .top .screen {
 	
 	height: 100%;
@@ -252,13 +254,14 @@ html {
 	
 	background: rgba(0, 0, 0, 0.2);
 	border-radius: 3px;
-	box-shadow: inset 0px 4px rgba(0, 0, 0, 0.2);
-	
-	/* Typography */
+	box-shadow: inset 5px 4px 3px 3px rgba(0, 0, 0, 0.2);
+						
+						
+
 	font-size: 17px;
 	line-height: 40px;
 	color: white;
-	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 	letter-spacing: 1px;
 }
 
@@ -284,10 +287,10 @@ html {
 
 
 
-/* Clear floats */
+
 .keys, .top {overflow: hidden;}
 
-/* Applying same to the keys */
+
 .keys span, .top span.clear {
 	float: left;
 	position: left;
@@ -309,16 +312,14 @@ html {
 	line-height: 36px;
 	text-align: center;
 	
-	/* prevent selection of text inside keys */
+	
 	user-select: none;
 	
-	/* Smoothing out hover and active states using css3 transitions */
+	
 	transition: all 0.2s ease;
+
+	
 }
-
-/* Remove right margins from operator keys */
-/* style different type of keys (operators/evaluate/clear) differently */
-
 
 
 .keys span.operator {
@@ -338,7 +339,7 @@ html {
 	color: white;
 }
 
-/* Some hover effects */
+
 .keys span:hover {
 	background: #ffaf64;
 	/*box-shadow: 0px 4px #4db1be;*/
@@ -353,32 +354,69 @@ html {
 }
 
 
-
-/* Simulating "pressed" effect on active state of the keys by removing the box-shadow and moving the keys down a bit */
-.keys span:focus {
-	/*box-shadow: 0px 0px whitesmoke;*/
-	/*top: 14px;*/
-}
-
 	
 .items.bmid{
 	background: #f68991;
 	box-shadow: 0px 4px #d3545d;
 	color: white;
+	
 }
 
 .items.q{
 	background: whitesmoke;
 	box-shadow: 0px 4px #9da853;
 	color: #2d2d2d;
+	
 }
 
-.items.q:active{
+
+#d.active, #d:active{
+	background: darkolivegreen;
+	box-shadow: 0px 1px #9da853;
+	color: #2d2d2d;
+}
+
+#b.active, #b:active {
 	background-color: #3e8e41;
-	box-shadow: 0 5px #666;
-	transform: translateY(10px);
+	box-shadow: 0 2px #666;
+	transform: translateY(2px);
 }
 
+#c.active, #c:active {
+	background-color: #3e8e41;
+	box-shadow: 0 2px #666;
+	transform: translateY(2px);
+}
+
+#e.active, #e:active {
+	background-color: #3e8e41;
+	box-shadow: 0 2px #666;
+	transform: translateY(2px);
+}
+
+#f.active, #f:active {
+	background-color: #3e8e41;
+	box-shadow: 0 2px #666;
+	transform: translateY(2px);
+}
+
+#g.active, #g:active {
+	background-color: #3e8e41;
+	box-shadow: 0 2px #666;
+	transform: translateY(2px);
+}
+
+#j.active, #j:active {
+	background-color: #3e8e41;
+	box-shadow: 0 2px #666;
+	transform: translateY(2px);
+}
+
+#CC.active, CC:active{
+	background-color: #3e8e41;
+	box-shadow: 0 2px #666;
+	transform: translateY(2px);
+}
 
 .hidden{
 	background: #f1ff92;
@@ -405,5 +443,18 @@ html {
   .column {
       width: 100%;
   }
+}
+
+#tutorialPanel {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(97, 203, 230, 0.938);
+  z-index: 2;
 }
 
