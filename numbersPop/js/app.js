@@ -32,6 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
   
     //setting starting index
     currentIndex = 3;
+
+    atTutorial = true;
   
 });
 window.addEventListener("load", function() {
@@ -65,7 +67,7 @@ window.addEventListener("load", function() {
 
   //starter interval
   
-  //document.getElementById("tutorialPanel").style.display = "block";
+  document.getElementById("tutorialPanel").style.display = "block";
 });
 
 
@@ -79,6 +81,7 @@ function startScreen(){
   
 }
 
+let atTutorial = true;
 function tutorialWalkthrough(){
   
 }
@@ -207,26 +210,37 @@ let skipMidBtns = true;
 function handleKeydownEvent(e) {
   switch(e.key) {
     case 'ArrowUp':
+      if(atTutorial==false){
       nav(-1);
       console.log("up");
+      }
       //$("testValue").text("up");
       break;
     case 'ArrowDown':
+      if(atTutorial==false){
       nav(1);
       console.log("down");
+      }
       break;
     case 'ArrowRight':
+      if(atTutorial==false){
       nav(1);
       console.log("right");
+      }
       break;
     case 'ArrowLeft': 
+      if(atTutorial==false){
       nav(-1);
 
       console.log("left");
+      }
       break;
       case 'Enter': 
+      if(atTutorial==false){
       nav(0);
-     
+      }else{
+        navTutorial();
+      }
       console.log("pressed OK");
       break;
       default:
@@ -234,9 +248,10 @@ function handleKeydownEvent(e) {
   }
 }
 
-function handleNumpad(){
-  //$('#moves').text('pressed numpad');
-  movesLeftFeedback();
+function navTutorial() {
+  atTutorial=false;
+  $("#tutorialPanel").hide("fast");
+  $("#b").effect("shake","slow");
 }
 
 let currentIndex = 1;
@@ -254,7 +269,6 @@ let mainAudio = document.getElementById('soundClick');
 /*settings vars start*/
 let atSettingsMenu = false;
 let soundOnNow = true;
-let settingsImgs = []; 
 
 /*settings vars end*/
 setInterval(function(){ $("#eyes").animate({
@@ -262,6 +276,7 @@ setInterval(function(){ $("#eyes").animate({
  
   opacity: '0.1'
 },'fast'); }, 4000);
+
 
 let alreadyPressedOK = false;
 function nav (move) {
@@ -293,6 +308,8 @@ function nav (move) {
        window.innerWidth >= window.innerHeight && selectedElementID !=='d'){
     }
 
+    
+
     //click animation
     if(alreadyPressedOK==false){
       alreadyPressedOK=true;
@@ -302,6 +319,8 @@ function nav (move) {
         $("#"+selectedElementID).toggleClass('active');
       }, 200);
     }
+
+    
 
     $("#eyes").animate({
       //width: '2.0rem',
