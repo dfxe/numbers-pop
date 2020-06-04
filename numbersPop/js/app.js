@@ -429,7 +429,7 @@ function nav (move) {
          
 
         } else if(movesLeftNumber == 0){
-          $("#"+selectedElementID).text("X");
+          $("#"+selectedElementID).text("←");
           $("#objective").text(allGameOverTxts[actualLanguageNum]);
           $("#eyes").animate({
             //width: '2.0rem',
@@ -437,7 +437,7 @@ function nav (move) {
           },'fast');
           
          
-          $("#calculator").effect("shake");
+          //$("#calculator").effect("shake");
           
           
          if(soundOnNow){
@@ -513,7 +513,7 @@ function nav (move) {
   if(movesLeftNumber == 0){
     if(selectedElementID != 'j' && selectedElementID != 'd' && selectedElementID != 'b' && selectedElementID != 'c' ){
       if((startingValue != levelObjectiveNumber)){
-      $("#"+selectedElementID).text("X");
+      $("#"+selectedElementID).text("←");
       }else{
         $("#"+selectedElementID).text(tickMark);
       }
@@ -542,7 +542,7 @@ function screenTransition(){
 }
 
 function setRandomColor() {
-  //'#'+(Math.random()*0xFFFFFF<<0).toString(16));
+  
   $("#calculator").css("background-color",  '#'+Math.random().toString(16).slice(-6));
   $("#screen-mod").css("background-color", '#'+Math.random().toString(16).slice(-6));
   let arr = Math.random().toString(16).slice(-6);
@@ -617,19 +617,19 @@ function soundOnOff(){
 }
 
 function operationControl(ops){
-  var expressionQ = ops;
-  switch (expressionQ[0]) {
+  
+  switch (ops[0]) {
       case 'x':
-        startingValue = startingValue *  parseInt(expressionQ[1]);
+        startingValue = startingValue * parseInt(ops[1]);
       break;
       case '÷':
-        startingValue = startingValue /  parseInt(expressionQ[1]);
+        startingValue = startingValue / parseInt(ops[1]);
       break;
       case '+':
-        startingValue = startingValue +  parseInt(expressionQ[1]);
+        startingValue = startingValue + parseInt(ops[1]);
       break;
       case '-':
-        startingValue = startingValue - parseInt(expressionQ[1]);
+        startingValue = startingValue - parseInt(ops[1]);
       break;
   
     default:
@@ -710,7 +710,6 @@ function pickSymbol(firstFactor, secondFactor, buildrID) {
   var sicko = 0; 
   if(buildrID == 0) {
     sicko = firstFactor * secondFactor;
-    //buildr1 +=  " x " ;
    
   }else if(buildrID == 1) {
     sicko = firstFactor - secondFactor;

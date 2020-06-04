@@ -40,12 +40,12 @@ html, body {
   
   color:black;
   font-family:sans-serif; 
-  text-shadow: 2px 2px grey;
+  /*text-shadow: 2px 2px grey;*/
   /*padding-left: 4rem;*/
   align-content: center;
   border-radius: 0.5em;
   background: rgb(255, 120, 29);
-  text-align: center;
+  text-align: left;
   
   margin-bottom: 5%;
   /*adding: 20px; 
@@ -68,9 +68,7 @@ html, body {
 }
 
 
-/* Finally adding some IE9 fallbacks for gradients to finish things up */
 
-/* A nice BG gradient */
 html {
   /*height: 100%;*/
 	  /*height:auto;*/
@@ -81,7 +79,7 @@ html {
 	background-size: cover;
 }
 
-/* Using box shadows to create 3D effects */
+
 #calculator {
 	
 	width: auto;
@@ -94,11 +92,11 @@ html {
   background: #453b44;
   border-radius: 10px;
   border-bottom-color: black;
-  box-shadow: 10px 10px #453b44, 10px 10px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 10px 10px #1b191b1f, 10px 10px 15px rgba(0, 0, 0, 0.2);
   margin: auto;
   
  
-  border: 2px solid darksalmon;
+  border: 4px solid darksalmon;
 
   
   animation-name: beginAnim; 
@@ -164,7 +162,7 @@ html {
 
 #screen-mod #show-input{
   font-size: 150%;
-  text-align: right;
+  text-align: left;
 }
 
 #pusher{
@@ -219,10 +217,13 @@ html {
 	max-width: 32em;
 	margin: 4px;
 	background: dimgray;
-	border: 2px solid dimgrey;
+	
+	border: 2px 2px inset dimgrey;
 	border-radius: 5px;
-	border-style: solid;
-
+	border-style: 1px 1px inset;
+	
+	text-shadow: 3px 3px rgba(48, 48, 48, 0.363);
+	text-indent: 40%;
   }
   
 .progression {
@@ -235,6 +236,7 @@ html {
   );
 	padding: 4px;
 	border-radius: 4px;
+	
 }
 
 #progressionSoFar{
@@ -242,12 +244,12 @@ html {
 	max-width: 0%;
 }
 
-/* Top portion */
+
 .top span.clear {
 	float: left;
 }
 
-/* Inset shadow on the screen to create indent */
+
 .top .screen {
 	
 	height: 100%;
@@ -259,13 +261,14 @@ html {
 	
 	background: rgba(0, 0, 0, 0.2);
 	border-radius: 3px;
-	box-shadow: inset 0px 4px rgba(0, 0, 0, 0.2);
-	
-	/* Typography */
+	box-shadow: inset 5px 4px 3px 3px rgba(0, 0, 0, 0.2);
+						
+						
+
 	font-size: 17px;
 	line-height: 40px;
 	color: white;
-	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 	letter-spacing: 1px;
 }
 
@@ -291,10 +294,10 @@ html {
 
 
 
-/* Clear floats */
+
 .keys, .top {overflow: hidden;}
 
-/* Applying same to the keys */
+
 .keys span, .top span.clear {
 	float: left;
 	position: left;
@@ -316,18 +319,14 @@ html {
 	line-height: 36px;
 	text-align: center;
 	
-	/* prevent selection of text inside keys */
+	
 	user-select: none;
 	
-	/* Smoothing out hover and active states using css3 transitions */
+	
 	transition: all 0.2s ease;
 
 	
 }
-
-/* Remove right margins from operator keys */
-/* style different type of keys (operators/evaluate/clear) differently */
-
 
 
 .keys span.operator {
@@ -347,7 +346,7 @@ html {
 	color: white;
 }
 
-/* Some hover effects */
+
 .keys span:hover {
 	background: #ffaf64;
 	/*box-shadow: 0px 4px #4db1be;*/
@@ -362,26 +361,19 @@ html {
 }
 
 
-
-/* Simulating "pressed" effect on active state of the keys by removing the box-shadow and moving the keys down a bit */
-.keys span:focus {
-	/*box-shadow: 0px 0px whitesmoke;*/
-	/*top: 14px;*/
-}
-
 	
 .items.bmid{
 	background: #f68991;
 	box-shadow: 0px 4px #d3545d;
 	color: white;
-	width: 33px;
+	
 }
 
 .items.q{
 	background: whitesmoke;
 	box-shadow: 0px 4px #9da853;
 	color: #2d2d2d;
-	width: 33px;
+	
 }
 
 
@@ -406,13 +398,9 @@ html {
 	100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 /**important for kaios screen size**/ 
-@media screen and (max-width: 320px) {
+/*@media screen and (max-width: 320px) {
   .column {
       width: 100%;
   }
-}
-
-.keys{
-	align-content: center;
-}
+}*/
 
