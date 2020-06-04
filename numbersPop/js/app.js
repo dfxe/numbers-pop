@@ -79,20 +79,22 @@ window.addEventListener("load", function() {
   $("#wrapper").text( " Welcome to Numbers Pop!\nNice. ");
 
   movesLeftFeedback();
+
+  document.getElementById("tutorialPanel").style.display = "block";
 });
 
 
 
 function startScreen(){
- 
   startedGameNowUnique = true;
   document.getElementById('bImg').src = "_assets/Empty.png";
   levelControl();
   
   currentIndex = 1;
+}
 
-
-
+function tutorialWalkthrough(){
+  
 }
 
 let actualLanguageNum = -1;
@@ -187,8 +189,7 @@ function levelOneBtnDisables(){
 }
 
 function computeProgression(){
-  //the max is 45 (100%), after that the progress bar doesn't appear
-  
+  //the max is 35 (100%), after that the progress bar doesn't appear
   $('#progressionSoFar').text(levelLeftAt.toString()+'/35');
   let progressNow = 0; 
   if(levelLeftAt <= 35){
@@ -414,6 +415,7 @@ function nav (move) {
           }
 
           wonGame = true;
+          confetti.start(1200, 50, 150);
           $(".progressionSoFar").fadeIn(500);
           
           levelLeftAt = levelLeftAt + 1;
