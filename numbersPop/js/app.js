@@ -17,8 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
       eyeszz.style.height = "65%";
       eyeszz.style.paddingBottom = "35%";
 
-      document.getElementById("DD").className = 'hidden';
-      $("#DD").hide();
+    
       
       document.getElementById("j").tabIndex = 8;
     
@@ -75,6 +74,7 @@ function startScreen(){
   levelControl();
   
   currentIndex = 1;
+  
 }
 
 function tutorialWalkthrough(){

@@ -19,7 +19,7 @@ html, body {
 }
 
 .items{
-  align-content: center;
+  align-content: right;
   
 }
 
@@ -42,10 +42,10 @@ html, body {
   font-family:sans-serif; 
   /*text-shadow: 2px 2px grey;*/
   /*padding-left: 4rem;*/
-  align-content: center;
+  align-content: right;
   border-radius: 0.5em;
   background: rgb(255, 120, 29);
-  text-align: left;
+  text-align: right;
   font-family: Candal;
   
   margin-bottom: 5%;
@@ -156,7 +156,7 @@ html {
 }
 
 #screen-mod #objective{
-  text-align: right;
+  text-align: left;
   font-size: 120%;
   padding-top:3%;
 
@@ -164,7 +164,7 @@ html {
 
 #screen-mod #show-input{
   font-size: 150%;
-  text-align: left;
+  text-align: right;
 }
 
 #pusher{
@@ -176,12 +176,7 @@ html {
   padding-bottom: 10%;
 }
 
-#moves{
-  font-family: sans-serif;
-  font-size: 1.0em;
-  text-align: left;
-  padding-top: 10%;
-}
+
 
 .movesDots{
 	
@@ -242,7 +237,7 @@ html {
 }
 
 #progressionSoFar{
-	text-align: center;
+	text-align: right;
 	max-width: 0%;
 }
 
