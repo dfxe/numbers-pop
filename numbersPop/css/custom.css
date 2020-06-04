@@ -157,12 +157,10 @@ html {
 }
 
 #screen-mod #objective{
+  display: inline;
   text-align: left;
   font-size: 120%;
   padding-top:3%;
-
-
-
 }
 
 #objectiveGrid{
