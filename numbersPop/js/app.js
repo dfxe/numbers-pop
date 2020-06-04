@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
       pusher.style.paddingBottom = "0%";
       pusher.style.padding = "12%";
     
-      document.getElementById("DD").className = 'hidden';
+    
       
      
     }
@@ -145,6 +145,8 @@ function levelControl(){
     document.getElementById("progressionSoFar").style.maxWidth = computeProgression();
     
   }
+
+  
   
   //save high score
   localStorage['highScoreKey'] = levelLeftAt.toString(); 
@@ -154,11 +156,14 @@ function levelControl(){
   //useful reset. 
   wonGame = false;
 
+  
+
   $("#CC").text("C");
   
   $("#show-input").text(startingValue.toString());
   $("#objective").text(" ="+levelObjectiveNumber.toString()); // maybe arrow symbol: ←
-
+  
+  
   movesLeftFeedback();
 }
 
@@ -404,7 +409,7 @@ function nav (move) {
         operationControl($("#"+selectedElementID).text());
         movesLeftNumber = movesLeftNumber - 1;
 
-        movesLeftFeedback();
+       
 
        
         // IF PLAYER WON
@@ -416,18 +421,22 @@ function nav (move) {
 
           wonGame = true;
           confetti.start(1200, 50, 150);
-          $(".progressionSoFar").fadeIn(500);
+
+         
           
           levelLeftAt = levelLeftAt + 1;
           $("#objective").text(tickMark+allNextTxts[actualLanguageNum]+levelLeftAt);
 
-          movesLeftFeedback();
+         
 
           $("#"+selectedElementID).text(tickMark);
           
           
           movesLeftFeedback();
-
+          
+          $("#show-input").fadeIn('slow');
+          $("#objective").fadeIn('slow');
+          $(".progressionSoFar").fadeIn(500);
          
 
         } else if(movesLeftNumber == 0){

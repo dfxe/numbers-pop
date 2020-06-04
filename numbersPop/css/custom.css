@@ -46,6 +46,7 @@ html, body {
   border-radius: 0.5em;
   background: rgb(255, 120, 29);
   text-align: left;
+  font-family: Candal;
   
   margin-bottom: 5%;
   /*adding: 20px; 
@@ -64,7 +65,8 @@ html, body {
 	box-sizing: border-box;
 	
 	/* Better text styling */
-	font: bold 14px sans-serif, sans-serif;
+	/*font: bold 14px sans-serif, sans-serif;*/
+	font: 14px Candal;
 }
 
 
