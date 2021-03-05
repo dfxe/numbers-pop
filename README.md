@@ -1,5 +1,4 @@
-<h1>Numbers Pop</h1><br><h3>A game made for the KaiOS platform.</h3><br/>
-Currently only supports resolution 240x320px. Please set the browser's viewport size to that resolution.<br />
+<h1>Numbers Pop</h1><br><h3>A game made for the <a href="https://www.kaiostech.com/">KaiOS</a> platform.</h3><br/>
 
 <h4>How to install</h4><br/>
 1. Download NumbersPop or clone NumbersPop via the repository url: <br><br>
