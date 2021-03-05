@@ -1,94 +1,80 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
-    <title>Numbers Pop</title>
-    <link rel="stylesheet" type="text/css" href="css/custom.css">
-    <link href='_assets/Candal/Candal-Regular.ttf' rel='stylesheet'>
-  </head>
 
-  <body>
-   
-    <div id = "tutorialPanel">
-      <img src="_assets/tutorial1.gif" id="tutGif">
-      <img src="_assets/btnsTutorial.gif" id="tutImg">
-    </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+  <title>Numbers Pop</title>
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
+  <!--link href='_assets/Candal/Candal-Regular.ttf' rel='stylesheet'-->
+</head>
 
-    <div class="grid-container">
-        <div id="calculator" >
-          
-            
-           
-<div class="top">
-  <span><img src="_assets/eyes3.png" id="eyes"></span>
-  <div class="screen" id="screen-mod"> 
-      <div>
-          
-          <div id="objectiveGrid">
-            <div id ="objective">10</div>
-            <img src="_assets/targetz.png" style="align-content: left;">
+<body>
+
+  <div id="tutorialPanel">
+    <img src="_assets/tutorial1.gif" id="tutGif">
+    <img src="_assets/btnsTutorial.gif" id="tutImg">
+  </div>
+
+  <div class="grid-container">
+    <div id="calculator">
+      <div class="top">
+        <span><img src="_assets/eyes3.png" id="calculator-eyes"></span>
+        <div class="screen" id="screen-mod">
+          <div>
+            <div id="objectiveGrid">
+              <div id="objective">10</div>
+              <img src="_assets/targetz.png" style="align-content: left;">
+            </div>
+            <div id="reelGrid">
+              <div id="show-input">0</div>
+            </div>
           </div>
-
-          
-          
-              <div id="reelGrid">
-    
-                    <div  id ="show-input">0</div>
-
-                    
-    
-              </div>
-
-              
+        </div>
       </div>
 
-     
-    
+      <div id="movesDotsId">
+        <div class="movesDots"></div>
+        <div class="movesDots"></div>
+        <div class="movesDots"></div>
+        <div class="movesDots"></div>
+        <div class="movesDots"></div>
       </div>
-</div>
 
-  <div id="movesDotsId">
-    <div class = "movesDots"></div>
-    <div class = "movesDots"></div>
-    <div class = "movesDots"></div>
-    <div class = "movesDots"></div>
-    <div class = "movesDots"></div>
-  </div>
-    
-	<div class="keys" id="pusher">
+      <div class="keys" id="keys-container">
 
-    
-   
-		<span class = "items q" tabIndex = "1" id="e"><img src="_assets/Empty.png" id="eImg"></img>4</span>
-		<span class = "items q" tabIndex = "2" id="f"><img src="_assets/Empty.png" id="fImg"></img>5</span>
-		<span class = "items q" tabIndex = "3" id="g"><img src="_assets/Empty.png" id="gImg"></img>6</span>
 
-		<span class = "items eval" tabIndex = "4" id = "d"><img src="_assets/eyesn.png" id="dImg"></img></span>
-		<span class = "items eval" tabIndex = "5" id="b"><img src="_assets/Empty.png" id="bImg"></img></span>
-		<span class = "items eval" tabIndex = "6" id = "c"><img src="_assets/Empty.png" id="cImg"></img></span>
 
-    <span class = "items clear" tabIndex = "7" id = "CC">C</span>
-    <!--span class = "items bmid" tabIndex = "8" id = "DD"></span-->
-		<span class = "items eval" tabIndex = "8" id = "j"><img src="_assets/settings.png" id="settings"></img></span>
-    
+        <span class="items q" tabIndex="1" id="e"><img src="_assets/Empty.png" id="eImg"></img>4</span>
+        <span class="items q" tabIndex="2" id="f"><img src="_assets/Empty.png" id="fImg"></img>5</span>
+        <span class="items q" tabIndex="3" id="g"><img src="_assets/Empty.png" id="gImg"></img>6</span>
+
+        <span class="items eval" tabIndex="4" id="d"><img src="_assets/eyesn.png" id="dImg"></img></span>
+        <span class="items eval" tabIndex="5" id="b"><img src="_assets/Empty.png" id="bImg"></img></span>
+        <span class="items eval" tabIndex="6" id="c"><img src="_assets/Empty.png" id="cImg"></img></span>
+
+        <span class="items clear" tabIndex="7" id="CC">C</span>
+
+        <span class="items eval" tabIndex="8" id="j"><img src="_assets/settings.png" id="settings"></img></span>
+
+      </div>
+      <div class="progressBar">
+        <div class="progression" id="progressionSoFar"></div>
+
+      </div>
+
+
     </div>
-    <div class="progressBar">
-        <div class="progression" id = "progressionSoFar"></div>
-        
-      </div>
-
-      
   </div>
-</div>
 
-<audio src="_sounds/BUTTON_Very_Bright_Click_mono.wav" id="soundClick"></audio>
-<audio src="_sounds/goodNextLvl.wav" id = "winSound"></audio>    
-<audio src="_sounds/gameOverLvl.wav" id = "loseSound"></audio>    
-    <script src="js/app.js" defer></script>
-    <script src="jquery/jquery-3.4.1.min.js"></script>
-    <script src="jquery/jquery-ui.js"></script>
-    <script src="js/confetti.min.js"></script>
-  </body>
+  <audio src="_sounds/BUTTON_Very_Bright_Click_mono.wav" id="soundClick"></audio>
+  <audio src="_sounds/goodNextLvl.wav" id="winSound"></audio>
+  <audio src="_sounds/gameOverLvl.wav" id="loseSound"></audio>
+  <script src="js/app.js" defer></script>
+  <script src="jquery/jquery-3.4.1.min.js"></script>
+  <script src="jquery/jquery-ui.js"></script>
+  <script src="js/confetti.min.js"></script>
+</body>
 
 </html>
