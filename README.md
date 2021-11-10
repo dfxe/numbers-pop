@@ -11,7 +11,7 @@
 3. Press Enter to skip intro<br><br>
 
 <h4>How to play</h4><br>
-<em>Game goal</em>: try to reach the number on the left side of the screen by pressing a good combination additions, substractions or multiplications.<br>
+<em>Game goal</em>: try to reach the number on the left side of the screen by pressing a good combination additions, subtractions or multiplications.<br>
 Numbers can be added, substracted and multiplied. No divisions, yet. <br><br>
 * Arrow keys to navigate the calculator's buttons<br><br>
 * Press Enter to press a button<br><br>
